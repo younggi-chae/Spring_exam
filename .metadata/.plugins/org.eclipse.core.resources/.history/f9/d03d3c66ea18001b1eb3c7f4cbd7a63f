@@ -1,0 +1,10 @@
+package kosta.di;
+
+public class MySQLDao implements Dao {
+
+	@Override
+	public void insertBoard() {
+		System.out.println("MySQLDao insertBoard() 호출");
+	}
+
+}

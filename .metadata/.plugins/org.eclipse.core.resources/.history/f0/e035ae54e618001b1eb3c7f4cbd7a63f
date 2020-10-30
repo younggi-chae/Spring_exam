@@ -1,0 +1,11 @@
+package kosta.di;
+
+public class OracleDAO implements Dao {
+
+	@Override
+	public void insertBoard() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

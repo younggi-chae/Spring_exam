@@ -1,0 +1,29 @@
+package kosta.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import kosta.service.HelloService;
+
+@Controller
+public class HelloController {
+	
+	
+	@RequestMapping("/hello.do")
+	public ModelAndView hello(){
+		ModelAndView mav = new ModelAndView();
+		HelloService service = new HelloService();
+		mav.setViewName("hello");
+		mav.addObject("message", service.getString());
+		
+		return mav;
+	}
+
+	public void setService(HelloService service) {
+		this.service = service;
+	}
+	
+	
+	
+}

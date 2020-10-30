@@ -1,0 +1,16 @@
+package kosta.di;
+
+import org.springframework.context.support.GenericApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+	     Resource resource = new ClassPathResource("applicationContext.xml");
+	     
+	     BeanFactory factory = new GenericApplicationContext(resource);
+	     
+	     Service service = (Service)factory.getBean("service");
+	     service.insert();
+	}
+
+}

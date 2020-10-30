@@ -1,0 +1,5 @@
+package kosta.di;
+
+public class LoggingAspect {
+
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="mySQLDao" class="kosta.di.MySQLDao"/>
+	<bean id="oracleDao" class="kosta.di.OracleDAO"></bean>	
+	
+	<bean id="service" class="kosta.di.WriteService">
+		<!-- <constructor-arg ref="oracleDao"/> -->
+		<property name="dao" ref="mySQLDao"/>  <!-- name은 변수명 -->
+	</bean>
+
+</beans>

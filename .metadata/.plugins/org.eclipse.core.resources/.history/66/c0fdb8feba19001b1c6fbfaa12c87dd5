@@ -1,0 +1,31 @@
+package kosta.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import kosta.model.Board;
+import kosta.model.BoardDAO;
+
+@Controller
+public class BoardController {
+	
+	@Autowired
+	private BoardDAO dao;
+	
+	@RequestMapping(value="/board_insert", method=RequestMethod.GET)
+	public String insertBoard(Model model){
+		return "insert_form";
+	}
+	
+	@RequestMapping(value="/board_insert", method=RequestMethod.POST)
+	public String board_insert(Board board){
+		dao.insert(board);
+		System.out.println("Controller" + board);
+		
+		return "";
+	}
+	
+}

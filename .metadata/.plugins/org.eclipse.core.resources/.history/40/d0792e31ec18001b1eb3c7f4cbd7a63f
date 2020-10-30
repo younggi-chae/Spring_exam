@@ -1,0 +1,6 @@
+package kosta.di;
+
+@org.springframework.stereotype.Service
+public interface Service {
+	public void insert();
+}

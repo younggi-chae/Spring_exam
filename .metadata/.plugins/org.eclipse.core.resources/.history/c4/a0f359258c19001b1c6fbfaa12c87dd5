@@ -1,0 +1,40 @@
+package kosta.di;
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+
+public class Main {
+
+	public static void main(String[] args) {
+	     Resource resource = new ClassPathResource("applicationContext.xml");
+	     
+	     //xml 명시적으로 설정할 경우
+	     /*BeanFactory factory = new GenericXmlApplicationContext(resource);*/
+	     
+	     //어노테이션으로 설정할 경우
+	     /*ApplicationContext factory = new GenericXmlApplicationContext(resource);*/
+	     
+	     //자바클래스를 이용할 경우
+	     //ApplicationContext factory = new AnnotationConfigApplicationContext(Factory.class);
+	     
+	     String[] config = {
+	    		 "applicationContext.xml",
+	    		 "commonConcern.xml"
+	     };
+	     
+	     ApplicationContext factory =
+	    		 new ClassPathXmlApplicationContext(config);
+	     
+	   /* Kosta kosta = (Kosta)factory.getBean("kostaService");
+	    kosta.insert();*/
+	     
+	    Service service = (Service)factory.getBean("writeService");
+	     service.insert();
+	}
+
+}

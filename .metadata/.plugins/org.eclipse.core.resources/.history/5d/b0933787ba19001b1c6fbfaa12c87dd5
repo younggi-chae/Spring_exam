@@ -1,0 +1,8 @@
+package kosta.model;
+
+public class BoardDAO {
+	
+	public void insert(Board board){
+		System.out.println(board);
+	}
+}

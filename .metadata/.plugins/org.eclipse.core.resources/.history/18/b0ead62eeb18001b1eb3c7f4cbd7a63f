@@ -1,0 +1,11 @@
+package kosta.di;
+
+public class OracleDAO implements Dao {
+
+	@Override
+	public void insertBoard() {
+		System.out.println("OracleDAO insertBoard 호출");
+
+	}
+
+}

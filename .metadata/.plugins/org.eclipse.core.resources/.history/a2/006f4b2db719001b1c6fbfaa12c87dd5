@@ -1,0 +1,23 @@
+package kosta.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import kosta.model.Board;
+
+@Controller
+public class BoardController {
+	
+	@RequestMapping("/board_insert_form")
+	public String insertBoard(Model model){
+		return "insert_form";
+	}
+	
+	@RequestMapping("/board_insert")
+	public String board_insert(Board board){
+		System.out.println(board);
+		return "";
+	}
+	
+}

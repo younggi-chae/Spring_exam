@@ -1,0 +1,11 @@
+package kosta.di;
+
+public class MySQLDao implements Dao {
+
+	@Override
+	public void insertBoard() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package kosta.model;
+
+public class BoardDAO {
+
+}

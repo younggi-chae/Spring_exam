@@ -1,0 +1,11 @@
+package kosta.di;
+
+public class KostaService implements Kosta {
+
+	@Override
+	public void insert() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

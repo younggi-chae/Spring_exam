@@ -1,0 +1,11 @@
+package kosta.di;
+
+public class WriteService implements Service {
+
+	@Override
+	public void insert() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
