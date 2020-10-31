@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	결과 내용 : <b>${message}</b>
+	<h1>LOGO</h1>
 </body>
 </html>
-
-

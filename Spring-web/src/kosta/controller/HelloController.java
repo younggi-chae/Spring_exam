@@ -14,14 +14,14 @@ import kosta.service.HelloService;
 		private HelloService service;
 		
 		@RequestMapping("/hello")
-		public String hello(Model model){
-			/*ModelAndView mav = new ModelAndView();		
-			mav.setViewName("hello");
-			mav.addObject("message", service.getMessage());*/
-			model.addAttribute("message", service.getMessage());
-			
+		public String hello(Model model){			
+			model.addAttribute("message", service.getMessage());			
 			return "hello";
 		}
+		
+		/*ModelAndView mav = new ModelAndView();		
+		mav.setViewName("hello");
+		mav.addObject("message", service.getMessage());*/
 
 		/*public void setService(HelloService service) {
 			this.service = service;
