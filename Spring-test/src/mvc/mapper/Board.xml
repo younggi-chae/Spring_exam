@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mvc.mapper.BoardMapper">
+	<cache />
+	
+	<insert id="insertBoard" parameterType="Board">
+		insert into board values(board_seq.nextval, 
+		#{title}, #{writer}, #{contents}, sysdate, 0)
+	</insert>
+	
+	<select id="listBoard" resultType="Board" >
+		select * from board order by seq desc		
+	</select>
+	
+	<select id="listBoardCnt" resultType="int">
+		select count(*) as listCnt from board
+	</select>
+	
+		
+	<select id="detailBoard" parameterType="int" resultType="Board">
+		select * from board where seq = #{seq}
+	</select>
+	
+	<update id="updateBoard" parameterType="Board">
+		update board set title=#{title}, contents=#{contents}
+			where seq = #{seq}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where seq = #{seq}
+	</delete>
+	
+	<insert id="insertReply" parameterType="Reply">
+		insert into reply(r_no, r_writer, r_contents, r_regdate, seq)
+			values(reply_seq.nextval, #{r_writer, jdbcType=VARCHAR}, #{r_contents, jdbcType=VARCHAR}, sysdate, #{seq})
+	</insert>
+	
+	<select id="listReply" parameterType="int" resultType="Reply">
+		select * from reply where seq = #{seq} order by r_no desc
+	</select>	
+	
+	<update id="updateReply" parameterType="Reply">
+		update reply set r_contents = #{r_contents, jdbcType=VARCHAR} where r_no = #{r_no}
+	</update>
+	
+	<delete id="deleteReply" parameterType="int">
+		delete from reply where r_no = #{r_no}
+	</delete>
+	
+	<update id="countHit" parameterType="int">
+		update board set hitcount = hitcount+1 where seq = #{seq}
+	</update>
+	
+	<!-- <select id="countBoard" parameterType="Search" resultType="int">
+		select count(*) from board
+		<if test="area != null">
+				<where>
+					where (title LIKE %aa% OR writer LIKE %aa%)
+					<foreach collection="area" item="item" separator="OR"
+						open="(" close=")" >
+							${item} LIKE #{searchKey}
+					</foreach>
+				</where>
+			</if>		
+	</select> -->
+
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
