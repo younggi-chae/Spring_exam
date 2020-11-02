@@ -6,6 +6,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 public class Board implements Serializable {
 	private int seq;
@@ -15,13 +16,12 @@ public class Board implements Serializable {
 	private String title;
 	
 	@Pattern(regexp="[0-9a-zA-Z가-힣]*", message="특수문자 금지")
-	private String writer;
-	
-	
+	private String writer;	
 	private String contents;
 	private String regdate;
 	private int hitcount;
 	private String fname;
+	private MultipartFile uploadFile;
 	
 	public Board() {}		
 	
@@ -77,6 +77,12 @@ public class Board implements Serializable {
 	}
 	public void setFname(String fname) {
 		this.fname = fname;
+	}	
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
 	}
 
 	@Override

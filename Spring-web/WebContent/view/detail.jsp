@@ -12,7 +12,8 @@
 	<ul>
 		<li>${board.seq }</li>
 		<li>${board.title }</li>
-		<li>${board.writer }</li>		
+		<li>${board.writer }</li>	
+		<li><a href="board_download?filename=${board.fname }">${board.fname }</a></li>	
 		<li>${board.contents }</li>
 	</ul><br>
 	
