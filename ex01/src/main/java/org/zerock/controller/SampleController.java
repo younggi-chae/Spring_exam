@@ -90,13 +90,14 @@ public class SampleController {
 	
 	@GetMapping("/exUpload")
 	public void exUpload(){
-		log.info("/exUpload...........");
+		log.info("/exUpload........");
 	}
 	
 	@PostMapping("/exUploadPost")
 	public void exUploadPost(ArrayList<MultipartFile> files){
+		
 		files.forEach(file -> {
-			log.info("---------------------------");
+			log.info("-------------------------");
 			log.info("name : " + file.getOriginalFilename());
 			log.info("size : " + file.getSize());
 		});
