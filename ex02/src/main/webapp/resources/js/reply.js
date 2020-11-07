@@ -3,8 +3,6 @@ console.log("Reply Moudule....")
 var replyService = (function() {
 
 	function add(reply, callback, error) {
-		console.log("add reply.......");
-
 		$.ajax({
 			type : 'post',
 			url : '/replies/new',

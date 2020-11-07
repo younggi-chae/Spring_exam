@@ -240,7 +240,7 @@ $(document).ready(function() {
 	  replyService.update(reply, function(result){
 		  alert(result);
 		  modal.modal("hide");
-		  showList(1);
+		  showList(pageNum);
 	  });	   
    });
    
@@ -249,7 +249,7 @@ $(document).ready(function() {
 	  replyService.remove(rno, function(result){
 		  alert(result);
 		  modal.modal("hide");
-		  showList(1);
+		  showList(pageNum);
 	  });
    });
    
@@ -292,6 +292,17 @@ $(document).ready(function() {
 	   console.log(str);
 	   replyPageFooter.html(str);
    }
+   
+   replyPageFooter.on("click", "li a", function(e){
+	  e.preventDefault();
+	  console.log("page click");
+	  
+	  var targetPageNum = $(this).attr("href");
+	  console.log("targetPageNum : " + targetPageNum);
+	  
+	  pageNum = targetPageNum;
+	  showList(pageNum);
+   });
    
 });
 </script>
