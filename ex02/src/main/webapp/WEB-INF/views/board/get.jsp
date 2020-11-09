@@ -185,7 +185,7 @@
               </div>
               <div class="form-group">
                 <label>Reply Date</label> 
-                <input class="form-control" name='replyDate' value='2018-01-01 13:13'>
+                <input class="form-control" name='replyDate' value=''>
               </div>      
             </div>
 	 
@@ -363,7 +363,7 @@ $(document).ready(function () {
       
         modalInputReply.val(reply.reply);
         modalInputReplyer.val(reply.replyer);
-        modalInputReplyDate.val(replyService.displayTime( reply.replyDate))
+        modalInputReplyDate.val(replyService.displayTime(reply.replyDate))
         .attr("readonly","readonly");
         modal.data("rno", reply.rno);
         
