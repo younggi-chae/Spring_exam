@@ -553,7 +553,7 @@ var bnoValue = '<c:out value="${board.bno}"/>'; */
  
 
 //12번 댓글 수정 
-/* replyService.update({
+/*  replyService.update({
   rno : 12,
   bno : bnoValue,
   reply : "Modified Reply...."
