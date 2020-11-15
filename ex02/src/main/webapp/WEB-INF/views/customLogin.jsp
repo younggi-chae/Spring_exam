@@ -45,7 +45,7 @@
                         <form role="form" method="post" action="/login">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="userid" name="username" type="text" autofocus>
+                                    <input class="form-control" placeholder="username" name="username" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">

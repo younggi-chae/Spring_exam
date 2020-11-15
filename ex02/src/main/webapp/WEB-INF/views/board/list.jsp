@@ -162,6 +162,7 @@
 
 							$("#myModal").modal("show");
 						}
+					
 
 						$("#regBtn").on("click", function() {
 
@@ -169,6 +170,8 @@
 
 						});
 
+						
+						//페이지 이동
 						var actionForm = $("#actionForm");
 
 						$(".paginate_button a").on("click",	function(e) {
@@ -184,7 +187,7 @@
 								actionForm.append("<input type='hidden' name='bno' value='"
 									+ $(this).attr("href") + "'>");
 								actionForm.attr("action", "/board/get");
-								actionForm.submit();
+				8				actionForm.submit();
 						});
 
 						var searchForm = $("#searchForm");
