@@ -302,9 +302,7 @@ $(document).ready(function () {
         
         showList(pageNum);
       });     
-
-    
-   
+  
     var modal = $(".modal");
     var modalInputReply = modal.find("input[name='reply']");
     var modalInputReplyer = modal.find("input[name='replyer']");
