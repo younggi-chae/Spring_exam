@@ -161,8 +161,7 @@
 							}
 
 							$("#myModal").modal("show");
-						}
-					
+						}					
 
 						$("#regBtn").on("click", function() {
 
