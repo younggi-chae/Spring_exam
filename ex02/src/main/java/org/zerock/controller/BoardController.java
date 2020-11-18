@@ -34,14 +34,10 @@ import lombok.extern.log4j.Log4j;
 public class BoardController {
 
 	private BoardService service;
-
 	
 	@GetMapping("/register")
 	@PreAuthorize("isAuthenticated()")
-	public void register() {
-
-	}
-
+	public void register() {}
 
 	@GetMapping("/list")
 	public void list(Criteria cri, Model model) {
