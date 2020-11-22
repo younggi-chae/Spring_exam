@@ -215,6 +215,7 @@ $(document).ready(function () {
     function showList(page){    	
     	console.log("show list " + page);
         
+    	
         replyService.getList({bno:bnoValue,page: page|| 1 }, function(replyCnt, list) {
           
         console.log("replyCnt: "+ replyCnt );
