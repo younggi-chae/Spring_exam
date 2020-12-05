@@ -328,8 +328,7 @@ $(document).ready(function () {
       
       $(".modal").modal("show");
       
-    });
-    
+    });   
 
     modalRegisterBtn.on("click",function(e){
       
@@ -356,10 +355,8 @@ $(document).ready(function () {
   //댓글 조회 클릭 이벤트 처리 
     $(".chat").on("click", "li", function(e){
       
-      var rno = $(this).data("rno");
-      
-      replyService.get(rno, function(reply){
-      
+      var rno = $(this).data("rno");      
+      replyService.get(rno, function(reply){      
         modalInputReply.val(reply.reply);
         modalInputReplyer.val(reply.replyer);
         modalInputReplyDate.val(replyService.displayTime(reply.replyDate))
@@ -376,26 +373,21 @@ $(document).ready(function () {
     });
     
 
-    modalModBtn.on("click", function(e){
-    	  
-   	  var reply = {rno:modal.data("rno"), reply: modalInputReply.val()};
-   	  
+    modalModBtn.on("click", function(e){    	  
+   	  var reply = {rno:modal.data("rno"), reply: modalInputReply.val()};   	  
    	  replyService.update(reply, function(result){
    	        
    	    alert(result);
    	    modal.modal("hide");
-   	    showList(pageNum);
-   	    
+   	    showList(pageNum);   	    
    	  });   	  
    	});
 
 
-   	modalRemoveBtn.on("click", function (e){
-   	  
+   	modalRemoveBtn.on("click", function (e){   	  
    	  var rno = modal.data("rno");
    	  
-   	  replyService.remove(rno, function(result){
-   	        
+   	  replyService.remove(rno, function(result){   	        
    	      alert(result);
    	      modal.modal("hide");
    	      showList(pageNum);
@@ -410,17 +402,13 @@ $(document).ready(function () {
 <script type="text/javascript">
 $(document).ready(function() {
 	
-  var operForm = $("#operForm"); 
-  
-  $("button[data-oper='modify']").on("click", function(e){
-    
-    operForm.attr("action","/board/modify").submit();
-    
+  var operForm = $("#operForm");   
+  $("button[data-oper='modify']").on("click", function(e){    
+    operForm.attr("action","/board/modify").submit();    
   });
   
     
-  $("button[data-oper='list']").on("click", function(e){
-    
+  $("button[data-oper='list']").on("click", function(e){    
     operForm.find("#bno").remove();
     operForm.attr("action","/board/list")
     operForm.submit();
