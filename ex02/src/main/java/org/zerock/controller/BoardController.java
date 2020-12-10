@@ -49,7 +49,6 @@ public class BoardController {
 
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
-
 	
 	@PostMapping("/register")
 	@PreAuthorize("isAuthenticated()")
@@ -67,7 +66,6 @@ public class BoardController {
 
 		return "redirect:/board/list";
 	}
-
 	
 	@GetMapping({ "/get", "/modify" })
 	public void get(@RequestParam("bno") Long bno, @ModelAttribute("cri") Criteria cri, Model model) {
@@ -75,7 +73,6 @@ public class BoardController {
 		log.info("/get or modify");
 		model.addAttribute("board", service.get(bno));
 	}
-
 	
 	@PostMapping("/modify")
 	public String modify(BoardVO board, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
@@ -92,7 +89,6 @@ public class BoardController {
 
 		return "redirect:/board/list";
 	}
-
 	
 	@PostMapping("/remove")
 	public String remove(@RequestParam("bno") Long bno, Criteria cri, RedirectAttributes rttr) {
@@ -105,8 +101,7 @@ public class BoardController {
 			rttr.addFlashAttribute("result", "success");
 		}
 		return "redirect:/board/list" + cri.getListLink();
-	}
-	
+	}	
 	
 	private void deleteFiles(List<BoardAttachVO> attachList) {
 		
@@ -131,9 +126,7 @@ public class BoardController {
 	        log.error("delete file error" + e.getMessage());
 	      }//end catch
 	    });//end foreachd
-	  }
-
-	
+	  }	
 
 	@GetMapping(value = "/getAttachList",
 			    produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
@@ -141,7 +134,5 @@ public class BoardController {
 	public ResponseEntity<List<BoardAttachVO>> getAttachList(Long bno) {
 		log.info("getAttachList " + bno);
 		return new ResponseEntity<>(service.getAttachList(bno), HttpStatus.OK);
-
 	}
-
 }
